@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Thank You | Florlaine</title>
+  <link rel="icon" href="imges/head.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="theme.css" />
+  <script src="theme.js" defer></script>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: var(--cream);
+      color: var(--text);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      text-align: center;
+    }
+
+    .theme-toggle{ position: fixed; top: 24px; right: 24px; }
+
+    h1 {
+      font-size: 2.5rem;
+      color: var(--pink-dark);
+      margin-bottom: 20px;
+    }
+
+    p {
+      font-size: 1.2rem;
+      color: var(--muted);
+      margin-bottom: 40px;
+    }
+
+    a.home-link {
+      text-decoration: none;
+      background-color: var(--text);
+      color: var(--cream);
+      padding: 12px 24px;
+      border-radius: 30px;
+      transition: background-color 0.3s ease;
+    }
+
+    a.home-link:hover {
+      background-color: var(--pink-dark);
+    }
+
+    .yarn-image {
+      width: 120px;
+      margin-bottom: 20px;
+      transform: rotate(90deg) scaleX(-1);
+    }
+  </style>
+</head>
+<body>
+
+  <button class="theme-toggle" id="themeToggle" aria-label="Toggle night mode" aria-pressed="false">
+    <span class="stitch"></span>
+  </button>
+
+  <img src="imges/contact.svg" alt="Illustration of a knitted flower with a heart" class="yarn-image" />
+  <h1>Thank You!</h1>
+  <p>Your message has been sent successfully. We will get back to you soon!</p>
+  <a href="index.html" class="home-link">Back to Home</a>
+
+</body>
+</html>

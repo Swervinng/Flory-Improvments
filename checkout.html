@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Checkout | Florlaine</title>
+<link rel="icon" href="imges/head.svg" type="image/svg+xml" />
+<link rel="stylesheet" href="theme.css" />
+<script src="theme.js" defer></script>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap');
+*{box-sizing:border-box}
+body{margin:0;background:var(--cream);color:var(--text);font-family:'DM Sans',sans-serif}
+.top-bar{display:flex;align-items:center;gap:1.5rem;padding:1.6rem clamp(2rem,6vw,6rem);background:var(--header-bg);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100}
+.top-bar .logo{font-family:'Playfair Display',serif;font-size:2.2rem;font-weight:700;color:var(--text)}
+.top-bar .logo span{color:var(--pink)}
+.wrap{max-width:1050px;margin:auto;padding:45px 20px 70px}
+.back{display:inline-block;margin-bottom:25px;color:var(--pink-dark);font-weight:700}
+.title{text-align:center;font-family:'Playfair Display',serif;font-size:44px;margin:10px 0 35px;color:var(--text)}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:28px}
+.panel{background:var(--surface);border:1px solid var(--border);border-radius:24px;padding:28px;box-shadow:0 18px 50px rgba(70,35,49,.08)}
+h2{font-family:'Playfair Display',serif;font-size:27px;margin-top:0;color:var(--text)}
+#summary{display:grid;gap:12px}
+.item{display:flex;justify-content:space-between;gap:15px;padding-bottom:12px;border-bottom:1px solid var(--border)}
+.muted{color:var(--muted)}
+.total{display:flex;justify-content:space-between;font-size:20px;font-weight:700;margin-top:18px}
+form{display:grid;gap:13px}
+label{font-size:13px;font-weight:700;color:var(--text)}
+input{width:100%;padding:13px;border:1px solid var(--input-border);border-radius:12px;outline:none;background:var(--input-bg);color:var(--text)}
+input:focus{border-color:var(--pink);box-shadow:0 0 0 3px var(--pink-soft)}
+button{border:0;border-radius:999px;padding:14px;background:var(--text);color:var(--cream);font-weight:700;cursor:pointer;margin-top:8px}
+button:hover{background:var(--pink-dark)}
+.success{display:none;text-align:center;padding:30px}
+.success h2{color:var(--pink-dark)}
+@media(max-width:700px){.grid{grid-template-columns:1fr}.title{font-size:36px}}
+</style>
+</head>
+<body>
+<header class="top-bar">
+  <a href="index.html" class="logo">Florlaine<span>.</span></a>
+  <button class="theme-toggle" id="themeToggle" aria-label="Toggle night mode" aria-pressed="false" style="margin-left:auto;">
+    <span class="stitch"></span>
+  </button>
+</header>
+<main class="wrap">
+<a class="back" href="cart.html">← Back to cart</a>
+<h1 class="title">Checkout</h1>
+<div class="grid">
+<section class="panel"><h2>Your order</h2><div id="summary"></div><div class="total"><span>Total</span><span id="total">$0.00</span></div></section>
+<section class="panel">
+<h2>Delivery details</h2>
+<form id="checkout-form">
+<label>Full name<input name="name" required autocomplete="name"></label>
+<label>Email<input type="email" name="email" required autocomplete="email"></label>
+<label>Phone<input name="phone" required autocomplete="tel"></label>
+<label>Address<input name="address" required autocomplete="street-address"></label>
+<label>City<input name="city" required autocomplete="address-level2"></label>
+<button type="submit">Place order</button>
+</form>
+<div class="success" id="success"><h2>Order received ❤️</h2><p>Thank you for shopping with Florlaine. Your order details have been prepared for email.</p></div>
+</section>
+</div>
+</main>
+<script>
+const cart = JSON.parse(localStorage.getItem("cart") || "[]");
+const summary = document.getElementById("summary");
+const totalEl = document.getElementById("total");
+let total = 0;
+
+if (!cart.length) {
+  summary.innerHTML = '<p class="muted">Your cart is empty. <a href="index.html#products">Browse products</a>.</p>';
+  document.getElementById("checkout-form").style.display = "none";
+} else {
+  cart.forEach(item => {
+    const qty = Number(item.quantity) || 1;
+    const price = Number(item.price) || 0;
+    total += qty * price;
+    const row = document.createElement("div");
+    row.className = "item";
+    row.innerHTML = `<span>${item.name} × ${qty}</span><strong>$${(qty * price).toFixed(2)}</strong>`;
+    summary.appendChild(row);
+  });
+}
+totalEl.textContent = `$${total.toFixed(2)}`;
+
+document.getElementById("checkout-form").addEventListener("submit", e => {
+  e.preventDefault();
+  const data = new FormData(e.target);
+  const lines = cart.map(i => `${i.name} x${i.quantity} - $${(Number(i.price)*Number(i.quantity)).toFixed(2)}`).join("\n");
+  const body = `New Florlaine order\n\n${lines}\n\nTotal: $${total.toFixed(2)}\n\nCustomer:\n${data.get("name")}\n${data.get("email")}\n${data.get("phone")}\n${data.get("address")}, ${data.get("city")}`;
+  window.location.href = `mailto:Florlaine@gmail.com?subject=Florlaine Order&body=${encodeURIComponent(body)}`;
+  localStorage.removeItem("cart");
+  if (window.florlaineUpdateCartCount) window.florlaineUpdateCartCount();
+  e.target.style.display = "none";
+  document.getElementById("success").style.display = "block";
+});
+</script>
+</body>
+</html>

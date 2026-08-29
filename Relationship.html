@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Charms | Florlaine</title>
+  <link rel="icon" href="imges/head.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="products.css" />
+  <link rel="stylesheet" href="theme.css" />
+  <script src="theme.js" defer></script>
+</head>
+<body>
+
+  <header class="subpage-header">
+    <a href="index.html" class="logo">Florlaine<span>.</span></a>
+    <a href="index.html" class="back-link">← Back to home</a>
+    <div class="spacer"></div>
+    <a href="cart.html">🛒 View Cart</a>
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle night mode" aria-pressed="false">
+      <span class="stitch"></span>
+    </button>
+  </header>
+
+  <section class="products" id="products">
+    <h1 class="heading">Latest <span>Charms</span></h1>
+    <div class="box-container">
+
+      <div class="box">
+        <span class="discount">-10%</span>
+        <div class="image">
+          <img src="imges/daisey-doodle.svg" alt="Daisy Doodle knitted charm">
+          <div class="icons">
+            <button class="cart-btn" data-name="Daisy Doodle" data-price="12.99" data-image="imges/daisey-doodle.svg">Add to Cart</button>
+          </div>
+        </div>
+        <div class="content"><h3>Daisy Doodle</h3><div class="price">$12.99 <span>$15.99</span></div></div>
+      </div>
+
+      <div class="box">
+        <span class="discount">-15%</span>
+        <div class="image">
+          <img src="imges/flora-twist.svg" alt="Flora Twist knitted charm">
+          <div class="icons">
+            <button class="cart-btn" data-name="Flora Twist" data-price="12.99" data-image="imges/flora-twist.svg">Add to Cart</button>
+          </div>
+        </div>
+        <div class="content"><h3>Flora Twist</h3><div class="price">$12.99 <span>$15.99</span></div></div>
+      </div>
+
+    </div>
+  </section>
+
+  <script src="products.js"></script>
+</body>
+</html>

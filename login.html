@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sign In | Florlaine</title>
+  <link rel="icon" href="imges/head.svg" type="image/svg+xml" />
+
+  <!-- Font Awesome -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    crossorigin="anonymous"
+  />
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet" />
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="login.css" />
+  <link rel="stylesheet" href="theme.css" />
+  <script src="theme.js" defer></script>
+</head>
+<body>
+  <a href="index.html" class="login-back">← Florlaine</a>
+  <button class="theme-toggle login-theme-toggle" id="themeToggle" aria-label="Toggle night mode" aria-pressed="false">
+    <span class="stitch"></span>
+  </button>
+
+  <div class="wrapper">
+    <!-- Sign In Form -->
+    <div class="form-wrapper signin">
+      <form id="loginForm">
+        <h2>Sign In</h2>
+        <div class="input-group">
+          <input type="text" id="username" required />
+          <label>Username</label>
+        </div>
+        <div class="input-group">
+          <input type="password" id="password" required />
+          <label>Password</label>
+        </div>
+        <div class="remember">
+          <label><input type="checkbox" /> Remember me</label>
+        </div>
+        <button type="submit">Sign in</button>
+        <div class="signup-link">
+          <p>Don't have an account? <a href="#" class="signUpBTN-link">Sign Up</a></p>
+        </div>
+        <div class="social-platform">
+          <p>Or sign in with</p>
+          <div class="social-icons">
+            <a href="#" aria-label="Sign in with Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" aria-label="Sign in with Facebook"><i class="fa-brands fa-facebook"></i></a>
+            <a href="#" aria-label="Sign in with Google"><i class="fa-brands fa-google"></i></a>
+          </div>
+        </div>
+      </form>
+    </div>
+
+    <!-- Sign Up Form -->
+    <div class="form-wrapper signup">
+      <form id="signupForm">
+        <h2>Sign Up</h2>
+        <div class="input-group">
+          <input type="email" id="email" required />
+          <label>Email</label>
+        </div>
+        <div class="input-group">
+          <input type="password" id="signup-password" required />
+          <label>Password</label>
+        </div>
+        <div class="remember">
+          <label><input type="checkbox" required /> I agree to the terms and conditions</label>
+        </div>
+        <button type="submit">Sign Up</button>
+        <div class="signIn-link">
+          <p>Already have an account? <a href="#" class="signInBTN-link">Sign In</a></p>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Custom JS -->
+  <script src="login.js"></script>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shipping and Delivery | Florlaine</title>
+  <link rel="icon" href="imges/head.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="shipping.css">
+  <link rel="stylesheet" href="theme.css">
+  <script src="theme.js" defer></script>
+</head>
+<body>
+
+  <header class="subpage-header">
+    <a href="index.html" class="logo">Florlaine<span>.</span></a>
+    <a href="cart.html" class="back-link">← Back to cart</a>
+    <div class="spacer"></div>
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle night mode" aria-pressed="false">
+      <span class="stitch"></span>
+    </button>
+  </header>
+
+  <div class="container">
+    <h2>Shipping and Delivery Information</h2>
+    <form id="shippingForm">
+
+      <label for="name">Full Name</label>
+      <input type="text" id="name" name="name" required>
+
+      <label for="address">Shipping Address</label>
+      <textarea id="address" name="address" rows="4" required></textarea>
+
+      <label for="delivery-method">Delivery Method</label>
+      <select id="delivery-method" name="delivery-method" required>
+        <option value="standard">Standard Shipping (5-7 days)</option>
+        <option value="express">Express Shipping (2-3 days)</option>
+        <option value="overnight">Overnight Shipping</option>
+      </select>
+
+      <label for="payment-method">Payment Method</label>
+      <select id="payment-method" name="payment-method" required>
+        <option value="credit-card">Credit Card</option>
+        <option value="paypal">PayPal</option>
+        <option value="bank-transfer">Bank Transfer</option>
+      </select>
+
+      <button type="submit" class="button">Place Order</button>
+    </form>
+  </div>
+
+  <script src="shipping.js"></script>
+</body>
+</html>

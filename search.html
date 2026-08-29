@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Search | Florlaine</title>
+  <link rel="icon" href="imges/head.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="products.css" />
+  <link rel="stylesheet" href="theme.css" />
+  <script src="theme.js" defer></script>
+</head>
+<body>
+
+  <header class="subpage-header">
+    <a href="index.html" class="logo">Florlaine<span>.</span></a>
+    <a href="index.html" class="back-link">← Back to home</a>
+    <div class="spacer"></div>
+    <div class="search-box" style="max-width:260px;flex:1;margin:0 1rem;padding:.4rem .7rem;border:1px solid var(--input-border);border-radius:999px;background:var(--input-bg);display:flex;align-items:center;">
+      <form action="search.html" method="GET" style="display:flex;width:100%;align-items:center;">
+        <input type="text" name="q" id="search-input" placeholder="Search for a product..." style="flex:1;border:0;outline:0;background:transparent;padding:.5rem;font-size:1.3rem;color:var(--text);" />
+        <button type="submit" aria-label="Search" style="background:none;border:0;color:var(--pink);cursor:pointer;padding:.4rem;"><i class="fas fa-search"></i></button>
+      </form>
+    </div>
+    <a href="cart.html">🛒 View Cart</a>
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle night mode" aria-pressed="false">
+      <span class="stitch"></span>
+    </button>
+  </header>
+
+  <section class="products">
+    <h1 class="heading">Search <span>Results</span></h1>
+    <p id="results-summary" style="text-align:center;color:var(--muted);margin-bottom:2rem;"></p>
+    <div id="results-container" class="box-container"></div>
+  </section>
+
+  <script>
+    // Sample product catalogue used to power the search page.
+    const searchResults = [
+      { name: "Golden Sunrise Lily", image: "imges/golden.svg", price: "12.99", oldPrice: "15.99", discount: "-5%" },
+      { name: "Frosted Blush", image: "imges/frosted-blush.svg", price: "12.99", oldPrice: "15.99", discount: "-20%" },
+      { name: "Winter's Grace", image: "imges/winter.svg", price: "12.99", oldPrice: "15.99", discount: "-10%" },
+      { name: "Autumn Breeze", image: "imges/autumn.svg", price: "12.99", oldPrice: "15.99", discount: "-15%" },
+      { name: "Minion Joy", image: "imges/minons.svg", price: "12.99", oldPrice: "15.99", discount: "-10%" },
+      { name: "Carl's Promise", image: "imges/up-bouquet.svg", price: "12.99", oldPrice: "15.99", discount: "-20%" },
+      { name: "Cotton Candy Bloom", image: "imges/coton-candy-bloom.svg", price: "12.99", oldPrice: "15.99", discount: "-10%" },
+      { name: "Lemon Blossom", image: "imges/lemon-blossom.svg", price: "12.99", oldPrice: "15.99", discount: "-15%" },
+      { name: "Blueberry Dreams", image: "imges/boy-bb.svg", price: "12.99", oldPrice: "15.99", discount: "-10%" },
+      { name: "Pink Hugs", image: "imges/girl-bb.svg", price: "12.99", oldPrice: "15.99", discount: "-15%" },
+      { name: "Flourish of Success", image: "imges/girl-gr.svg", price: "12.99", oldPrice: "15.99", discount: "-10%" },
+      { name: "Bow Hair Clip", image: "imges/hair-bow.svg", price: "12.99", oldPrice: "15.99", discount: "-10%" },
+      { name: "Rosey Books", image: "imges/book-rose.svg", price: "12.99", oldPrice: "15.99", discount: "-15%" },
+      { name: "Daisy Doodle", image: "imges/daisey-doodle.svg", price: "12.99", oldPrice: "15.99", discount: "-10%" },
+      { name: "Flora Twist", image: "imges/flora-twist.svg", price: "12.99", oldPrice: "15.99", discount: "-15%" }
+    ];
+
+    const resultsContainer = document.getElementById("results-container");
+    const resultsSummary = document.getElementById("results-summary");
+
+    function displaySearchResults(results) {
+      resultsContainer.innerHTML = "";
+      if (results.length === 0) {
+        resultsContainer.innerHTML = '<p class="empty-note">No products found. Try a different search term.</p>';
+      } else {
+        results.forEach(product => {
+          const box = document.createElement("div");
+          box.className = "box";
+          box.innerHTML = `
+            <span class="discount">${product.discount}</span>
+            <div class="image">
+              <img src="${product.image}" alt="${product.name}">
+              <div class="icons">
+                <button class="cart-btn"
+                   data-name="${product.name}"
+                   data-price="${product.price}"
+                   data-image="${product.image}">
+                  Add to Cart
+                </button>
+              </div>
+            </div>
+            <div class="content">
+              <h3>${product.name}</h3>
+              <div class="price">$${product.price} <span>$${product.oldPrice}</span></div>
+            </div>
+          `;
+          resultsContainer.appendChild(box);
+        });
+      }
+      resultsSummary.textContent = `${results.length} result(s) found for your search.`;
+    }
+
+    function searchProducts(query) {
+      const filtered = searchResults.filter(product =>
+        product.name.toLowerCase().includes(query.toLowerCase())
+      );
+      displaySearchResults(filtered);
+    }
+
+    const params = new URLSearchParams(window.location.search);
+    const searchQuery = params.get("q") || "";
+
+    if (searchQuery.trim() !== "") {
+      document.getElementById("search-input").value = searchQuery;
+      searchProducts(searchQuery);
+    } else {
+      resultsSummary.textContent = "Please enter a search term above.";
+    }
+  </script>
+
+  <!-- Shared cart-add logic (re-runs after results are rendered) -->
+  <script src="products.js"></script>
+  <script>
+    // products.js binds on DOMContentLoaded, but results render after that
+    // via JS above, so re-bind whenever new result buttons appear.
+    const observer = new MutationObserver(() => {
+      document.querySelectorAll(".cart-btn:not([data-bound])").forEach((button) => {
+        button.setAttribute("data-bound", "true");
+        button.addEventListener("click", (e) => {
+          e.preventDefault();
+          const name = button.dataset.name;
+          const price = parseFloat(button.dataset.price);
+          const image = button.dataset.image;
+          if (!name || Number.isNaN(price)) return;
+
+          let cart = [];
+          try { cart = JSON.parse(localStorage.getItem("cart")) || []; } catch (_) {}
+          const existing = cart.find((item) => item.name === name);
+          if (existing) {
+            existing.quantity = (Number(existing.quantity) || 1) + 1;
+          } else {
+            cart.push({ name, price, image, quantity: 1 });
+          }
+          localStorage.setItem("cart", JSON.stringify(cart));
+          if (window.florlaineUpdateCartCount) window.florlaineUpdateCartCount();
+
+          const original = button.textContent;
+          button.textContent = "Added ✓";
+          button.disabled = true;
+          setTimeout(() => { button.textContent = original; button.disabled = false; }, 1000);
+        });
+      });
+    });
+    observer.observe(document.getElementById("results-container"), { childList: true });
+  </script>
+</body>
+</html>

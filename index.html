@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Florlaine — handmade knitted flowers that never fade. Shop bouquets for every occasion." />
+  <title>Florlaine | Handmade Knitted Flowers</title>
+  <link rel="icon" href="imges/head.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+  <link rel="stylesheet" href="home.css" />
+  <link rel="stylesheet" href="theme.css" />
+  <script src="theme.js" defer></script>
+</head>
+<body>
+
+  <header>
+    <input type="checkbox" name="" id="toggler" />
+    <label for="toggler" class="fas fa-bars" aria-hidden="true"></label>
+
+    <a href="#home" class="logo">Florlaine<span>.</span></a>
+
+    <nav class="navbar">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#products">Products</a>
+      <a href="#review">Review</a>
+      <a href="#contact">Contact</a>
+      <a href="cart.html">🛒 View Cart</a>
+    </nav>
+
+    <div class="search-box">
+      <form action="search.html" method="GET">
+        <input type="text" name="q" id="search-input" placeholder="Search for a product..." />
+        <button type="submit" class="search-submit" aria-label="Search"><i class="fas fa-search"></i></button>
+      </form>
+    </div>
+
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle night mode" aria-pressed="false">
+      <span class="stitch"></span>
+    </button>
+  </header>
+
+  <!-- home section -->
+  <section class="home" id="home">
+    <div class="home-container">
+      <div class="content">
+        <div class="adjust">
+          <h3>Where every stitch blooms <br>
+            Knitted flowers that never fade!
+          </h3>
+          <p>"Where threads bloom and petals never fade,<br>
+            our handcrafted knitted flowers bring everlasting beauty to every moment.<br>
+            Each piece is made with love, one stitch at a time."</p>
+
+          <a href="#products" class="btn">Shop Now</a>
+        </div>
+      </div>
+      <div class="image">
+        <img src="imges/hero-bouquet.svg" alt="A bouquet of handmade knitted flowers in soft pink tones" width="590" height="590" />
+      </div>
+    </div>
+  </section>
+
+  <div class="about-section" id="about">
+    <div class="about-card text-card">
+      <h1>About Us</h1>
+      <p>
+        Welcome to <strong>Florlaine</strong> – the magical world of crochet!<br><br>
+        We are passionate about handmade art and believe that every stitch tells a story.
+        Florlaine was born out of our love for crochet and our desire to share unique,
+        heartfelt pieces crafted with care and attention to detail.
+        We create seasonal designs that suit every style, ensuring each piece feels
+        as special as if it were made just for you.
+        <br><br>
+        Our vision is to bring back the warmth of handmade crafts and offer a touch of
+        natural beauty and elegance to every home and space.
+        <br><br>
+        Thank you for being part of our journey ❤️
+      </p>
+    </div>
+
+    <div class="about-card image-card">
+      <img src="imges/about.svg" alt="A soft pink knitted flower arrangement" width="600" height="600" />
+    </div>
+  </div>
+
+  <!-- Occasions Section -->
+  <section class="occasions-section">
+    <h2><span class="highlight">Suggestions</span></h2>
+    <div class="occasions-container">
+      <a href="graduation.html" class="occasion-card">
+        <img src="imges/graduation.svg" alt="Graduation bouquets" width="130" height="130" />
+        <h4>Graduation</h4>
+        <p>2 Products</p>
+      </a>
+      <a href="acc.html" class="occasion-card">
+        <img src="imges/bow.svg" alt="Accessories and small gifts" width="130" height="130" />
+        <h4>Randoms</h4>
+        <p>4 Products</p>
+      </a>
+      <a href="baby.html" class="occasion-card">
+        <img src="imges/baby.svg" alt="Baby-themed bouquets" width="130" height="130" />
+        <h4>Baby</h4>
+        <p>3 Products</p>
+      </a>
+      <a href="Relationship.html" class="occasion-card">
+        <img src="imges/rela.svg" alt="Bouquets for loved ones" width="130" height="130" />
+        <h4>Charms</h4>
+        <p>2 Products</p>
+      </a>
+    </div>
+
+    <h2 class="header-text" id="products">Products</h2>
+    <div class="container">
+      <a href="pro-sea.html" class="card">
+        <img class="background" src="imges/summer.svg" alt="Seasonal bouquets collection" />
+        <div class="card-content"><h3 class="title">Seasons</h3></div>
+      </a>
+      <a href="pro-di.html" class="card">
+        <img class="background" src="imges/minons.svg" alt="Disney-inspired bouquets collection" />
+        <div class="card-content"><h3 class="title">Disney</h3></div>
+      </a>
+      <a href="pro-si.html" class="card">
+        <img class="background" src="imges/sunny-bloom.svg" alt="Single flower bouquets collection" />
+        <div class="card-content"><h3 class="title">Single</h3></div>
+      </a>
+      <a href="pro-full.html" class="card">
+        <img class="background" src="imges/cover.svg" alt="Colorful mixed bouquets collection" />
+        <div class="card-content"><h3 class="title">Colorful</h3></div>
+      </a>
+    </div>
+  </section>
+
+  <section class="review" id="review">
+    <h1 class="heading">Customer's <span>review</span></h1>
+    <div class="box-container">
+      <div class="box">
+        <div class="stars" aria-label="5 out of 5 stars">
+          <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+        </div>
+        <p>The knitted roses looked even better in person than in the photos — you can tell how much care goes into every stitch. Mine hasn't wilted a day since!</p>
+        <div class="user">
+          <img src="imges/customer-1-boy.svg" alt="">
+          <div class="user-info">
+            <h3>Adil</h3>
+            <span>happy customer</span>
+          </div>
+        </div>
+        <span class="fas fa-quote-right" aria-hidden="true"></span>
+      </div>
+      <div class="box">
+        <div class="stars" aria-label="5 out of 5 stars">
+          <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+        </div>
+        <p>I ordered a graduation bouquet as a gift and it arrived beautifully packaged. Such a thoughtful, lasting alternative to real flowers.</p>
+        <div class="user">
+          <img src="imges/customer-2-girl.svg" alt="">
+          <div class="user-info">
+            <h3>Nora</h3>
+            <span>happy customer</span>
+          </div>
+        </div>
+        <span class="fas fa-quote-right" aria-hidden="true"></span>
+      </div>
+      <div class="box">
+        <div class="stars" aria-label="5 out of 5 stars">
+          <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+        </div>
+        <p>Florlaine's charms collection is adorable — I've bought three now as little pick-me-up gifts for friends. Fast shipping too!</p>
+        <div class="user">
+          <img src="imges/customer-3-girl.svg" alt="">
+          <div class="user-info">
+            <h3>Doaa</h3>
+            <span>happy customer</span>
+          </div>
+        </div>
+        <span class="fas fa-quote-right" aria-hidden="true"></span>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact-section" id="contact">
+    <h1><span>Contact</span> Us</h1>
+    <div class="container-con">
+      <form id="contact-form">
+        <input type="text" name="name" placeholder="Your Name" required />
+        <input type="email" name="email" placeholder="Your Email" required />
+        <input type="text" name="number" placeholder="Your Phone Number" required />
+        <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+      <div class="contact-image">
+        <img src="imges/contact.svg" alt="Illustration of a knitted flower with a heart" />
+      </div>
+    </div>
+
+    <section class="footer">
+      <div class="box-container">
+        <div class="box">
+          <h3>Quick links</h3>
+          <a href="#home">home</a>
+          <a href="#about">about</a>
+          <a href="#products">products</a>
+          <a href="#review">review</a>
+          <a href="#contact">contact</a>
+        </div>
+        <div class="box">
+          <h3>Extra links</h3>
+          <a href="https://www.instagram.com/florlaine_store?igsh=MW10MTc3MHBqMG43Mw==">Instagram</a>
+          <a href="https://www.facebook.com/share/1939viEojb/">Facebook</a>
+          <a href="https://www.tiktok.com/@florlaine5?_t=ZM-8vQUEV1BrT5&_r=1">Tiktok</a>
+        </div>
+        <div class="box">
+          <h3>Locations</h3>
+          <a href="#">Sudan</a>
+          <a href="#">KSA</a>
+          <a href="#">UAE</a>
+          <a href="#">Qatar</a>
+          <a href="#">Egypt</a>
+        </div>
+        <div class="box">
+          <h3>Contact info</h3>
+          <a href="tel:+201171866818">+20 117-186-681</a>
+          <a href="mailto:Florlaine@gmail.com">Florlaine@gmail.com</a>
+          <span>City of Bloom, Blossom Street, 2005</span>
+        </div>
+      </div>
+      <div class="credit">created by <span>| Florlaine |</span> all rights reserved!</div>
+    </section>
+  </section>
+
+  <script src="home.js"></script>
+</body>
+</html>
