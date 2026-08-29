@@ -1,0 +1,10 @@
+<svg viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Knitted flower illustration">
+  <defs><linearGradient id="bg32" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#fff5f8"/>
+      <stop offset="100%" stop-color="#fce4ec"/>
+    </linearGradient></defs>
+  <rect width="600" height="600" fill="url(#bg32)"/>
+  <circle cx="300.0" cy="300.0" r="243.0" fill="none" stroke="#b94470" stroke-width="1" stroke-dasharray="4 6" opacity="0.25"/>
+  <path d="M300.0,300.0 Q201.3,256.2 170.5,175.0 Q252.7,202.9 300.0,300.0 Z" fill="#f2a7bf" opacity="0.92" stroke="#b94470" stroke-width="1.4" stroke-linejoin="round"/><path d="M300.0,300.0 Q343.8,201.3 425.0,170.5 Q397.1,252.7 300.0,300.0 Z" fill="#f2a7bf" opacity="0.92" stroke="#b94470" stroke-width="1.4" stroke-linejoin="round"/><path d="M300.0,300.0 Q398.7,343.8 429.5,425.0 Q347.3,397.1 300.0,300.0 Z" fill="#f2a7bf" opacity="0.92" stroke="#b94470" stroke-width="1.4" stroke-linejoin="round"/><path d="M300.0,300.0 Q256.2,398.7 175.0,429.5 Q202.9,347.3 300.0,300.0 Z" fill="#f2a7bf" opacity="0.92" stroke="#b94470" stroke-width="1.4" stroke-linejoin="round"/>
+  <circle cx="300.0" cy="300.0" r="96.0" fill="#b94470"/>
+</svg>
