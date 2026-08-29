@@ -1,0 +1,10 @@
+<svg viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Knitted flower illustration">
+  <defs><linearGradient id="bg23" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#eefaf5"/>
+      <stop offset="100%" stop-color="#d3f0e4"/>
+    </linearGradient></defs>
+  <rect width="600" height="600" fill="url(#bg23)"/>
+  <circle cx="300.0" cy="300.0" r="243.0" fill="none" stroke="#2f6b52" stroke-width="1" stroke-dasharray="4 6" opacity="0.25"/>
+  <path d="M300.0,300.0 Q216.1,368.0 129.8,358.6 Q192.0,298.0 300.0,300.0 Z" fill="#a9d8c4" opacity="0.92" stroke="#2f6b52" stroke-width="1.4" stroke-linejoin="round"/><path d="M300.0,300.0 Q199.1,261.4 164.2,181.9 Q247.7,205.5 300.0,300.0 Z" fill="#a9d8c4" opacity="0.92" stroke="#2f6b52" stroke-width="1.4" stroke-linejoin="round"/><path d="M300.0,300.0 Q283.0,193.3 334.3,123.3 Q355.7,207.5 300.0,300.0 Z" fill="#a9d8c4" opacity="0.92" stroke="#2f6b52" stroke-width="1.4" stroke-linejoin="round"/><path d="M300.0,300.0 Q383.9,232.0 470.2,241.4 Q408.0,302.0 300.0,300.0 Z" fill="#a9d8c4" opacity="0.92" stroke="#2f6b52" stroke-width="1.4" stroke-linejoin="round"/><path d="M300.0,300.0 Q400.9,338.6 435.8,418.1 Q352.3,394.5 300.0,300.0 Z" fill="#a9d8c4" opacity="0.92" stroke="#2f6b52" stroke-width="1.4" stroke-linejoin="round"/><path d="M300.0,300.0 Q317.0,406.7 265.7,476.7 Q244.3,392.5 300.0,300.0 Z" fill="#a9d8c4" opacity="0.92" stroke="#2f6b52" stroke-width="1.4" stroke-linejoin="round"/>
+  <circle cx="300.0" cy="300.0" r="96.0" fill="#2f6b52"/>
+</svg>
